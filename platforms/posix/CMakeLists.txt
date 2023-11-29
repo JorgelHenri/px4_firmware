@@ -74,7 +74,7 @@ install(
 		${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
 	DESTINATION
 		# ${CATKIN_PACKAGE_SHARE_DESTINATION}
-    ${PROJECT_NAME}
+		${PROJECT_NAME}
 	USE_SOURCE_PERMISSIONS
 )
 
@@ -129,8 +129,8 @@ elseif("${PX4_BOARD}" MATCHES "sitl")
 			${PROJECT_SOURCE_DIR}/launch
 			${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
 		DESTINATION
-      ${PROJECT_NAME}
       # ${CATKIN_PACKAGE_SHARE_DESTINATION}
+		  ${PROJECT_NAME}
 		USE_SOURCE_PERMISSIONS
 		)
 
@@ -140,8 +140,8 @@ elseif("${PX4_BOARD}" MATCHES "sitl")
 			${PROJECT_SOURCE_DIR}/CMakeLists.txt
 			${PROJECT_SOURCE_DIR}/package.xml
 		DESTINATION
-			${CATKIN_PACKAGE_SHARE_DESTINATION}
-      ${PROJECT_NAME}
+			# ${CATKIN_PACKAGE_SHARE_DESTINATION}
+		  ${PROJECT_NAME}
 		)
 
 	# px4 Tools dirs
@@ -149,7 +149,8 @@ elseif("${PX4_BOARD}" MATCHES "sitl")
 		DIRECTORY
 			${PROJECT_SOURCE_DIR}/Tools/ecl_ekf
 		DESTINATION
-			${CATKIN_PACKAGE_SHARE_DESTINATION}/Tools
+			# ${CATKIN_PACKAGE_SHARE_DESTINATION}/Tools
+		  ${PROJECT_NAME}
 		USE_SOURCE_PERMISSIONS
 		)
 
@@ -159,7 +160,8 @@ elseif("${PX4_BOARD}" MATCHES "sitl")
 			${PROJECT_SOURCE_DIR}/Tools/setup_gazebo.bash
 			${PROJECT_SOURCE_DIR}/Tools/upload_log.py
 		DESTINATION
-			${CATKIN_PACKAGE_SHARE_DESTINATION}/Tools
+			# ${CATKIN_PACKAGE_SHARE_DESTINATION}/Tools
+		  ${PROJECT_NAME}
 		)
 
 	# ROMFS files
@@ -167,7 +169,8 @@ elseif("${PX4_BOARD}" MATCHES "sitl")
 		DIRECTORY
 			${PX4_BINARY_DIR}/etc
 		DESTINATION
-			${CATKIN_PACKAGE_SHARE_DESTINATION}/build/px4_sitl_default
+			# ${CATKIN_PACKAGE_SHARE_DESTINATION}/build/px4_sitl_default
+		  ${PROJECT_NAME}
 		)
 
 	# sitl_gazebo built plugins
@@ -175,7 +178,8 @@ elseif("${PX4_BOARD}" MATCHES "sitl")
 		DIRECTORY
 			${PX4_BINARY_DIR}/build_gazebo
 		DESTINATION
-			${CATKIN_PACKAGE_SHARE_DESTINATION}/build/px4_sitl_default
+			# ${CATKIN_PACKAGE_SHARE_DESTINATION}/build/px4_sitl_default
+		  ${PROJECT_NAME}
 		FILES_MATCHING
 			PATTERN "CMakeFiles" EXCLUDE
 			PATTERN "*.so"
@@ -187,7 +191,8 @@ elseif("${PX4_BOARD}" MATCHES "sitl")
 			${PROJECT_SOURCE_DIR}/Tools/sitl_gazebo/models
 			${PROJECT_SOURCE_DIR}/Tools/sitl_gazebo/worlds
 		DESTINATION
-			${CATKIN_PACKAGE_SHARE_DESTINATION}/Tools/sitl_gazebo
+			# ${CATKIN_PACKAGE_SHARE_DESTINATION}/Tools/sitl_gazebo
+		  ${PROJECT_NAME}
 		)
 
 	# sitl_gazebo files
@@ -196,7 +201,8 @@ elseif("${PX4_BOARD}" MATCHES "sitl")
 			${PROJECT_SOURCE_DIR}/Tools/sitl_gazebo/CMakeLists.txt
 			${PROJECT_SOURCE_DIR}/Tools/sitl_gazebo/package.xml
 		DESTINATION
-			${CATKIN_PACKAGE_SHARE_DESTINATION}/Tools/sitl_gazebo
+			# ${CATKIN_PACKAGE_SHARE_DESTINATION}/Tools/sitl_gazebo
+		  ${PROJECT_NAME}
 		)
 
 endif()
